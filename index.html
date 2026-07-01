@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tailwind Practice</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-zinc-900 text-white p-6 md:p-12 flex flex-col items-center justify-center min-h-screen">   
+    
+<div class="max-w-5xl w-full grid grid-cols-1 lg:grid-cols-3 gap-8">
+    <div class="lg:col-span-1">
+        <div class="relative max-w-sm overflow-hidden bg-zinc-900 rounded-xl shadow-xl p-6 flex flex-col items-center text-center hover:border-zinc-700 border border-zinc-800 p-4">
+            <img class="w-24 h-24 rounded-full shadow-md object-cover nb-4" src="data:image/jpeg;base64,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" alt="Profile">
+        <h2 class="text-xl font-bold text-gray-400 tracking-wide">Miracle</h2>
+        <p class="mt-2 text-x text-zinc-400">Frontend Developer</p>
+        <div class="flex flex-wrap gap-2 justify-center mb-6">
+            <span class="bg-zinc-700 text-blue-100 text-s font-semibold px-2.5 py-1 rounded">HTML5</span>
+            <span class="bg-zinc-700 text-blue-100 text-s font-semibold px-2.5 py-1 rounded">CSS3</span>
+            <span class="bg-zinc-700 text-blue-100 text-s font-semibold px-2.5 py-1 rounded">TAILWIND</span>
+        </div>
+            <button class="mt-4 px-4 py-2 text-xs font-semibold uppercase tracking-wider text-grey-400 border border-black bg-zinc-800 hover:bg-stone-600 hover:text-white py-2 px-4 rounded-xl  transition duration-300 ">
+            Connect With Me
+            </button>
+    </div>
+</div>
+
+<!--first project-->
+<div class="lg:col-span-2 flex flex-col justify-center">
+    <h3 class="text-2xl font-bold mb-6 tracking-wide text-gray-400">My Projects</h3>
+    <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+        <div class="bg-zinc-900 border border-zinc-800 p-5 rounded-xl hover:border-zinc-700 shadow-lg transition">
+            <div class="text-xs font-bold text-blue-100 tracking-wider uppercase mb-1">Web App</div>
+            <a href="todo.html" class="hover:underline">
+                <h4 class="text-lg font-semibold mb-2 flex items-center gap-1">Task Management Dashboard 🔗</h4>
+            </a>
+            <p class="text-zinc-400 text-sm mb-4">A sleek and functional todo dashboard created to manage tasks efficiently.</p>
+            <div class="flex gap-2">
+                <span class="text-xs bg-zinc-800 text-zinc-400 px-2 py-0.5 rounded">HTML</span>
+                <span class="text-xs bg-zinc-800 text-zinc-400 px-2 py-0.5 rounded">Tailwind</span>
+            </div>
+        </div>
+        <!--second project-->
+        <div class="bg-zinc-900 border border-zinc-800 p-5 rounded-xl hover:border-zinc-700 transition">
+            <div class="text-xs font-bold text-blue-100 tracking-wider uppercase mb-1">Frontend</div>
+            <a href="pricing.html" class="hover:underline">
+                <h4 class="text-lg font-semibold mb-2 flex items-center gap-1">Figma Component Library 🔗</h4>
+            </a>
+            <p class="text-zinc-400 text-sm mb-4">A collection of custom pixel-perfect UI elements coded from vector mockups.</p>
+            <div class="flex gap-2">
+                <span class="text-xs bg-zinc-800 text-zinc-400 px-2 py-0.5 rounded">HTML</span>
+                <span class="text-xs bg-zinc-800 text-zinc-400 px-2 py-0.5 rounded">Tailwind</span>
+            </div>
+        </div>
+        <!--third project-->
+        <div class="bg-zinc-900 border border-zinc-800 p-5 rounded-xl hover:border-zinc-700 transition sm:col-span-2">
+            <div class="text-xs font-bold text-blue-100 tracking-wider uppercase mb-1">Optimization</div>
+            <a href="mobile.html" class="hover:underline">
+              <h4 class="text-lg font-semibold mb-2 flex items-center gap-1">Mobile Responsive Engine 🔗</h4>
+            </a>
+            <p class="text-zinc-400 text-sm mb-4">Refining and rebuilding legacy layouts into modern fluid frameworks that adapt to standard mobile hardware aspect ratios.</p>
+            <div class="flex gap-2">
+                <span class="text-xs bg-zinc-800 text-zinc-400 px-2 py-0.5 rounded">CSS Media Queries</span>
+                <span class="text-xs bg-zinc-800 text-zinc-400 px-2 py-0.5 rounded">Tailwind</span>
+            </div>
+        </div>
+    </div>
+</div>
+</div>
+</body>
+</html>

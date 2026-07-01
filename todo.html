@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Task Management Dashboard</title>
+<script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-black text-white min-h-screen p-6 md:p-12 flex flex-col items-center">
+
+<div class="max-w-2xl w-full">
+    <!-- Header -->
+    <div class="mb-8">
+    <h1 class="text-3xl font-bold tracking-tight text-zinc-100">Workspace Tasks</h1>
+    <p class="text-zinc-400 text-sm">Manage your daily execution workflow dynamically.</p>
+    </div>
+
+    <!-- Task Input Form Container -->
+    <div class="bg-zinc-900 border border-zinc-800 p-5 rounded-2xl mb-6">
+    <div class="flex flex-col sm:flex-row gap-3">
+        <!-- Text Input -->
+        <input type="text" id="taskInput" placeholder="Write a new task..." 
+    class="flex-1 bg-zinc-950 border border-zinc-800 rounded-xl px-4 py-2.5 text-sm text-zinc-100 placeholder-zinc-500 focus:outline-none focus:border-zinc-700">
+        
+        <!-- Priority Dropdown Selector -->
+        <select id="prioritySelect" class="bg-zinc-950 border border-zinc-800 rounded-xl px-3 py-2.5 text-sm text-zinc-300 focus:outline-none focus:border-zinc-700">
+        <option value="High">🔴 High Priority</option>
+        <option value="Medium" selected>🟡 Medium Priority</option>
+        <option value="Low">🟢 Low Priority</option>
+        </select>
+
+        <!-- Add Button -->
+        <button id="addTaskBtn" class="bg-zinc-100 hover:bg-zinc-200 text-black font-semibold px-5 py-2.5 rounded-xl text-sm transition duration-200">
+        Add Task
+        </button>
+    </div>
+    </div>
+
+    <!-- Dynamic Tasks Container List -->
+    <div id="taskList" class="space-y-3">
+    <!-- JavaScript will dynamically drop new tasks right here! -->
+    </div>
+</div>
+
+<!-- 🧠 THE JAVASCRIPT ENGINE -->
+<script>
+    // 1. Grab our HTML layout elements using their IDs
+    const taskInput = document.getElementById('taskInput');
+    const prioritySelect = document.getElementById('prioritySelect');
+    const addTaskBtn = document.getElementById('addTaskBtn');
+    const taskList = document.getElementById('taskList');
+
+    // 2. Setup a function to create a brand new task item element
+    function createTaskElement(taskText, priority) {
+      // Create the main wrapper div container for a single task row
+    const taskDiv = document.createElement('div');
+    taskDiv.className = "bg-zinc-900 border border-zinc-800 p-4 rounded-xl flex items-center justify-between gap-4 transition hover:border-zinc-700";
+
+      // Determine priority badge style colors using Tailwind utility conditional logic
+    let badgeColor = "bg-yellow-500/10 text-yellow-400 border-yellow-500/20";
+    if (priority === 'High') badgeColor = "bg-red-500/10 text-red-400 border-red-500/20";
+    if (priority === 'Low') badgeColor = "bg-green-500/10 text-green-400 border-green-500/20";
+
+      // Assemble internal HTML layout structure for the task entry item
+    taskDiv.innerHTML = `
+        <div class="flex items-center gap-3 min-w-0">
+        <input type="checkbox" class="task-checkbox w-4 h-4 rounded border-zinc-800 bg-zinc-950 text-zinc-100 focus:ring-0 cursor-pointer">
+        <span class="task-text text-sm text-zinc-200 font-medium truncate">${taskText}</span>
+        </div>
+        <div class="flex items-center gap-3 shrink-0">
+        <span class="text-[10px] font-bold border px-2 py-0.5 rounded-full uppercase ${badgeColor}">
+            ${priority}
+        </span>
+        <button class="delete-btn text-zinc-500 hover:text-red-400 text-xs font-semibold p-1 transition">
+            Delete
+        </button>
+        </div>
+    `;
+
+      // Add Interactive Functional Behaviors inside the dynamically loaded component
+    const checkbox = taskDiv.querySelector('.task-checkbox');
+    const textSpan = taskDiv.querySelector('.task-text');
+    const deleteBtn = taskDiv.querySelector('.delete-btn');
+
+      // Checkbox complete event toggler logic
+    checkbox.addEventListener('change', () => {
+        if (checkbox.checked) {
+        textSpan.classList.add('line-through', 'text-zinc-500');
+        } else {
+        textSpan.classList.remove('line-through', 'text-zinc-500');
+        }
+    });
+
+      // Delete action event button listener rule execution logic
+    deleteBtn.addEventListener('click', () => {
+        taskDiv.remove();
+    });
+
+    return taskDiv;
+    }
+
+    // 3. Setup core execution trigger action when button handler is clicked
+    addTaskBtn.addEventListener('click', () => {
+    const text = taskInput.value.trim();
+    const priority = prioritySelect.value;
+
+      // Input validator safety gate check warning block rule
+    if (text === '') {
+        alert('Please enter a task description before submitting!');
+        return;
+    }
+
+      // Generate the item, drop it onto your main stack list node target, then clear inputs
+    const newTask = createTaskElement(text, priority);
+    taskList.appendChild(newTask);
+    taskInput.value = '';
+    });
+
+    // Let the user hit the 'Enter' key inside the text field box to quickly submit tasks as well
+    taskInput.addEventListener('keypress', (e) => {
+    if (e.key === 'Enter') {
+        addTaskBtn.click();
+    }
+    });
+</script>
+</body>
+</html>

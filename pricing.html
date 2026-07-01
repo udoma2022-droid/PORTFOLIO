@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Figma UI Library - Pricing Grid</title>
+<script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-black text-white min-h-screen p-6 md:p-12 flex flex-col items-center justify-center">
+
+<div class="max-w-4xl w-full">
+    <div class="text-center mb-12">
+    <span class="text-xs font-bold text-red-400 uppercase tracking-widest bg-red-500/10 px-3 py-1 rounded-full border border-red-500/20">Figma Component #02</span>
+    <h1 class="text-3xl font-extrabold tracking-tight text-zinc-100 mt-4 sm:text-4xl">Flexible Tier Architectures</h1>
+    <p class="text-zinc-400 text-sm mt-2">Pixel-perfect utility cards optimized directly from vectors.</p>
+    </div>
+
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
+    
+    <div class="bg-zinc-900/50 border border-zinc-800 p-8 rounded-2xl flex flex-col justify-between h-full hover:border-zinc-700 transition">
+        <div>
+        <h3 class="text-lg font-bold text-zinc-300">Starter Core</h3>
+        <p class="text-zinc-500 text-xs mt-1">Perfect for local developers tracking active builds.</p>
+        <div class="mt-6 flex items-baseline gap-1">
+            <span class="text-4xl font-extrabold tracking-tight text-white">$0</span>
+            <span class="text-sm font-medium text-zinc-500">/monthly</span>
+        </div>
+        
+        <ul class="mt-8 space-y-4 text-sm text-zinc-400">
+            <li class="flex items-center gap-3">✔ <span class="truncate">3 Active Repository Pipelines</span></li>
+            <li class="flex items-center gap-3">✔ <span class="truncate">Local Hosting Server Nodes</span></li>
+            <li class="flex items-center gap-3">✔ <span class="truncate">Basic Multi-Task Automation</span></li>
+        </ul>
+        </div>
+        
+        <button class="w-full mt-8 bg-zinc-800 hover:bg-zinc-700 text-zinc-300 font-semibold py-3 px-4 rounded-xl text-sm border border-zinc-700 transition duration-200">
+        Launch Core Tier
+        </button>
+    </div>
+
+    <div class="relative bg-zinc-900 border-2 border-red-500/40 shadow-2xl shadow-red-500/5 p-8 rounded-2xl flex flex-col justify-between h-full transform scale-105">
+        
+        <span class="absolute -top-3 left-1/2 -translate-x-1/2 bg-red-500 text-black font-extrabold text-[10px] uppercase tracking-widest px-3 py-1 rounded-full shadow">
+        🔥 Most Popular
+        </span>
+<!--premium plan-->
+        <div>
+        <h3 class="text-lg font-bold text-white flex items-center gap-2">Enterprise Pro</h3>
+        <p class="text-zinc-400 text-xs mt-1">Scalable multi-agent execution channels for freelancers.</p>
+        <div class="mt-6 flex items-baseline gap-1">
+            <span class="text-4xl font-extrabold tracking-tight text-white">$29</span>
+            <span class="text-sm font-medium text-zinc-400">/monthly</span>
+        </div>
+        
+        <ul class="mt-8 space-y-4 text-sm text-zinc-300">
+            <li class="flex items-center gap-3">🚀 <span>Unlimited Cloud Pipelines</span></li>
+            <li class="flex items-center gap-3">🚀 <span>Global Edge Distribution Nodes</span></li>
+            <li class="flex items-center gap-3">🚀 <span>Advanced JavaScript Engine Core</span></li>
+            <li class="flex items-center gap-3">🚀 <span>24/7 Priority Execution Support</span></li>
+        </ul>
+        </div>
+        
+        <button class="w-full mt-8 bg-red-500 hover:bg-red-600 text-black font-bold py-3 px-4 rounded-xl text-sm transition duration-200 shadow-lg shadow-red-500/20">
+        Scale Up Today
+        </button>
+    </div>
+
+    </div>
+</div>
+
+</body>
+</html>
